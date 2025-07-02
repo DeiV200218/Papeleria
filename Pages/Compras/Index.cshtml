@@ -1,0 +1,110 @@
+﻿@page
+@model Papeleria.Pages_Compras.IndexModel
+
+@{
+    ViewData["Title"] = "Compras";
+}
+
+<div class="contenedor-limitado mt-4">
+    <!-- Lista de compras -->
+    <div class="card shadow-sm rounded-3">
+        <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
+            <h6 class="mb-0 fw-semibold">
+                <i class="bi bi-receipt me-2"></i> Compras registradas
+            </h6>
+            <a asp-page="Create" class="btn btn-sm btn-success">
+                <i class="bi bi-plus-circle me-1"></i> Nueva compra
+            </a>
+        </div>
+ 
+
+        <div class="card-body p-0">
+            <table class="table table-striped table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Total</th>
+                        <th class="text-end">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Transacciones)
+                    {
+                        <tr>
+                            <td>@item.Fecha.ToString("dd/MM/yyyy")</td>
+                            <td>@item.Fecha.ToString("hh:mm tt")</td> <!-- Hora en formato 12h -->
+                            <td>@item.Total.ToString("C")</td>
+                            <td class="text-end">
+                                @* 
+                                <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm me-1" title="Detalle">
+                                    <i class="bi bi-eye"></i>
+                                </a> 
+                                *@
+                                <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm me-1" title="Editar">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                                <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-outline-danger btn-sm" title="Eliminar">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    @using System.Text.Json
+    <script>
+        cargarGraficoVentas();
+
+        function cargarGraficoVentas() {
+            const fechas = @Html.Raw(JsonSerializer.Serialize(Model.Fechas));
+            const totales = @Html.Raw(JsonSerializer.Serialize(Model.Totales));
+            const ventasAgrupadas = {};
+
+            for (let i = 0; i < fechas.length; i++) {
+                const fecha = fechas[i];
+                const total = totales[i];
+                ventasAgrupadas[fecha] = (ventasAgrupadas[fecha] || 0) + total;
+            }
+
+            const ctx = document.getElementById('graficoVentas').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(ventasAgrupadas),
+                    datasets: [{
+                        label: 'Total vendido ($)',
+                        data: Object.values(ventasAgrupadas),
+                        backgroundColor: 'rgba(25, 135, 84, 0.7)',
+                        borderColor: 'rgba(25, 135, 84, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: { color: "#198754" }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: { color: "#6c757d" }
+                        },
+                        x: {
+                            ticks: { color: "#6c757d" }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+}

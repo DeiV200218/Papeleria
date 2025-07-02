@@ -1,0 +1,124 @@
+﻿/* Tipografía general */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+    background-color: #fefefe;
+    color: #333;
+    letter-spacing: 0.2px;
+}
+
+/* Navbar minimalista */
+.navbar {
+    background-color: #fff !important;
+    border-bottom: 1px solid #eee;
+    box-shadow: none;
+}
+
+    .navbar .nav-link {
+        color: #444 !important;
+        font-weight: 500;
+        margin-left: 1rem;
+    }
+
+        .navbar .nav-link:hover {
+            color: #0d6efd !important;
+            text-decoration: underline;
+        }
+
+/* Contenedores principales */
+.container {
+    max-width: 900px;
+}
+
+/* Formularios */
+label {
+    font-weight: 500;
+    color: #444;
+}
+
+input.form-control,
+select.form-select {
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    box-shadow: none;
+    border: 1px solid #ccc;
+}
+
+input:focus,
+select:focus {
+    border-color: #0d6efd;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Botones */
+.btn {
+    border-radius: 6px;
+    font-weight: 500;
+    box-shadow: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+    .btn-success:hover {
+        background-color: #157347;
+    }
+
+.btn-link {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+    .btn-link:hover {
+        text-decoration: underline;
+    }
+
+/* Tarjetas */
+.card {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+}
+
+.card-footer {
+    background-color: transparent;
+    border-top: 1px solid #eee;
+}
+
+/* Tablas */
+.table th,
+.table td {
+    vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Footer */
+footer {
+    background-color: #fff;
+    color: #666;
+    border-top: 1px solid #eee;
+    font-size: 0.85rem;
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    color: white;
+}
+
+.navbar-toggler {
+    content: "\2630"; /* ícono de menú tipo ☰ */
+    font-size: 1.25rem;
+    color: white;
+}

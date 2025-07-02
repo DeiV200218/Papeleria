@@ -1,0 +1,70 @@
+﻿@page
+@model Papeleria.Pages_Productos.EditModel
+
+@{
+    ViewData["Title"] = "Editar producto";
+}
+
+<div class="contenedor-limitado mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-pencil-fill me-2"></i> Editar producto</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" class="needs-validation" novalidate autocomplete="off">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                        <input type="hidden" asp-for="Producto.Id" />
+
+                        <div class="mb-3">
+                            <label asp-for="Producto.Nombre" class="form-label fw-semibold"></label>
+                            <input asp-for="Producto.Nombre" class="form-control" />
+                            <span asp-validation-for="Producto.Nombre" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Producto.Precio" class="form-label fw-semibold"></label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" name="Producto.Precio" class="form-control"
+                                       value="@Model.Producto.Precio.ToString("N2", new System.Globalization.CultureInfo("es-CO"))" />
+                            </div>
+                            <span asp-validation-for="Producto.Precio" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Producto.Stock" class="form-label fw-semibold">Cantidad en stock</label>
+                            <input asp-for="Producto.Stock" class="form-control" />
+                            <span asp-validation-for="Producto.Stock" class="text-danger small"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Producto.ProveedorId" class="form-label fw-semibold">Proveedor</label>
+                            <select asp-for="Producto.ProveedorId" class="form-select"
+                                    asp-items="Model.Proveedores">
+                                <option value="">Seleccione un proveedor</option>
+                            </select>
+                            <span asp-validation-for="Producto.ProveedorId" class="text-danger small"></span>
+                        </div>
+
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-save me-1"></i> Guardar cambios
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-end bg-light">
+                    <a asp-page="Index" class="btn btn-link">← Volver al listado</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

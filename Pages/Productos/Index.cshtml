@@ -1,0 +1,55 @@
+﻿@page
+@model Papeleria.Pages_Productos.IndexModel
+
+@{
+    ViewData["Title"] = "Productos";
+}
+
+<div class="contenedor-limitado mt-4">
+    <div class="card shadow-sm rounded-3">
+        <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
+            <h6 class="mb-0 fw-semibold">
+                <i class="bi bi-box-seam me-2"></i> Lista de productos
+            </h6>
+            <a asp-page="Create" class="btn btn-sm btn-success">
+                <i class="bi bi-plus-circle me-1"></i> Nuevo producto
+            </a>
+        </div>
+
+        <div class="card-body p-0">
+            <table class="table table-striped table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Proveedor</th>
+                        <th class="text-end">Precio</th>
+                        <th class="text-end">Stock</th>
+                        <th class="text-end" style="width: 180px;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var producto in Model.Producto)
+                    {
+                        <tr>
+                            <td>@producto.Nombre</td>
+                            <td>@producto.Proveedor?.Nombre</td>
+                            <td class="text-end">@producto.Precio.ToString("C0", new System.Globalization.CultureInfo("es-CO"))</td>
+                            <td class="text-end">@producto.Stock</td>
+                            <td class="text-end">
+                                <a asp-page="Edit" asp-route-id="@producto.Id" class="btn btn-sm btn-outline-primary me-1" title="Editar">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+@*                                 <a asp-page="Details" asp-route-id="@producto.Id" class="btn btn-sm btn-outline-secondary me-1" title="Detalles">
+                                    <i class="bi bi-eye-fill"></i>
+                                </a> *@
+                                <a asp-page="Delete" asp-route-id="@producto.Id" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                                    <i class="bi bi-trash-fill"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

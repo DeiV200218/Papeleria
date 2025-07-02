@@ -1,0 +1,177 @@
+﻿/* Tipografía general */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 15px;
+    background-color: #fefefe;
+    color: #333;
+    letter-spacing: 0.2px;
+}
+
+/* Navbar minimalista */
+.navbar {
+    background-color: #fff !important;
+    border-bottom: 1px solid #eee;
+    box-shadow: none;
+}
+
+    .navbar .nav-link {
+        color: #444 !important;
+        font-weight: 500;
+        margin-left: 1rem;
+    }
+
+        .navbar .nav-link:hover {
+            color: #0d6efd !important;
+            text-decoration: underline;
+        }
+
+/* Contenedores principales */
+/*.container {
+    max-width: 900px;
+}*/
+
+/* Formularios */
+label {
+    font-weight: 500;
+    color: #444;
+}
+
+input.form-control,
+select.form-select {
+    border-radius: 6px;
+    padding: 0.5rem 0.75rem;
+    box-shadow: none;
+    border: 1px solid #ccc;
+}
+
+input:focus,
+select:focus {
+    border-color: #0d6efd;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Botones */
+.btn {
+    border-radius: 6px;
+    font-weight: 500;
+    box-shadow: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+}
+
+    .btn-success:hover {
+        background-color: #157347;
+    }
+
+.btn-link {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+    .btn-link:hover {
+        text-decoration: underline;
+    }
+
+/* Tarjetas */
+.card {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+}
+
+.card-header {
+    background-color: transparent;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+}
+
+.card-footer {
+    background-color: transparent;
+    border-top: 1px solid #eee;
+}
+
+/* Tablas */
+.table th,
+.table td {
+    vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+footer {
+    background-color: #fff !important;
+    z-index: 1;
+    border-top: 1px solid #eee;
+    position: relative;
+    margin-top: 0 !important;
+}
+
+
+main > .container {
+    padding-bottom: 1rem;
+}
+
+.navbar-toggler-icon {
+    background-image: none;
+    color: white;
+}
+
+.navbar-toggler {
+    content: "\2630"; /* ícono de menú tipo ☰ */
+    font-size: 1.25rem;
+    color: white;
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Para limitar el ancho de los módulos normales */
+.contenedor-limitado {
+    max-width: 900px;
+    margin-inline: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Para vistas que deben aprovechar toda la pantalla */
+.contenedor-extendido {
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+body {
+    background-image: url('/images/utiles-escolares.png'); /* Colocá aquí tu ruta */
+    background-repeat: repeat; /* Repite horizontal y verticalmente */
+    background-size: auto;     /* O ajustás si querés cambiar el tamaño */
+    background-attachment: fixed; /* Opcional: para que el fondo quede fijo al hacer scroll */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.7); /* Blanco translúcido */
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
+
+

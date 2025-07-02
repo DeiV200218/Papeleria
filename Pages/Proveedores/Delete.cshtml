@@ -1,0 +1,41 @@
+@page
+@model Papeleria.Pages_Proveedores.DeleteModel
+
+@{
+    ViewData["Title"] = "Eliminar proveedor";
+}
+
+<div class="contenedor-limitado mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="mb-0">
+                        <i class="bi bi-trash-fill me-2"></i> Confirmar eliminación
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="mb-4">¿Estás seguro de que deseas eliminar este proveedor?</p>
+
+                    <dl class="row small">
+                        <dt class="col-sm-4">Nombre</dt>
+                        <dd class="col-sm-8">@Model.Proveedor.Nombre</dd>
+
+                        <dt class="col-sm-4">Teléfono</dt>
+                        <dd class="col-sm-8">@Model.Proveedor.Telefono</dd>
+                    </dl>
+
+                    <form method="post" class="mt-4">
+                        <input type="hidden" asp-for="Proveedor.Id" />
+                        <div class="d-flex justify-content-between">
+                            <a asp-page="Index" class="btn btn-outline-secondary">Cancelar</a>
+                            <button type="submit" class="btn btn-danger">
+                                <i class="bi bi-trash me-1"></i> Eliminar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

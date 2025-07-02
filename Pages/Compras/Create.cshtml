@@ -1,0 +1,187 @@
+﻿@page
+@model Papeleria.Pages.Compras.CreateModel
+@{
+    ViewData["Title"] = "Registrar Compra";
+}
+
+<div class="contenedor-limitado mt-4">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">
+                <i class="bi bi-cart-check me-2"></i> Registrar nueva compra
+            </h5>
+        </div>
+        <div class="card-body">
+            <form method="post" id="formCompra" autocomplete="off">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                <table class="table table-sm table-hover align-middle" id="detalle-table">
+                    <thead class="table-light">
+                        <tr>
+                            <th style="width:40%">Producto</th>
+                            <th style="width:20%">Cantidad</th>
+                            <th style="width:25%">Precio Unitario</th>
+                            <th style="width:15%" class="text-end">Quitar</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="agregarFila()">
+                        <i class="bi bi-plus-circle me-1"></i> Agregar producto
+                    </button>
+                    <div class="fs-5 fw-semibold text-end">
+                        Total: $<span id="totalCompra">0.00</span>
+                    </div>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-success">
+                        <i class="bi bi-save2 me-1"></i> Guardar compra
+                    </button>
+                </div>
+
+                <!-- Plantilla oculta para nuevas filas -->
+                <table style="display:none">
+                    <tbody>
+                        <tr id="plantillaFila">
+                            <td>
+                                <select asp-for="CompraVM.Detalles[0].ProductoId" class="form-select form-select-sm" onchange="actualizarPrecio(this)">
+                                    <option value="">Seleccione</option>
+                                    @foreach (var producto in Model.ProductosDisponibles)
+                                    {
+                                        <option value="@producto.Id"
+                                                data-precio="@(producto.Precio.ToString(System.Globalization.CultureInfo.InvariantCulture))">
+                                            @producto.Nombre
+                                        </option>
+                                    }
+                                </select>
+                                <span asp-validation-for="CompraVM.Detalles[0].ProductoId" class="text-danger small"></span>
+                            </td>
+                            <td>
+                                <input asp-for="CompraVM.Detalles[0].Cantidad" class="form-control form-control-sm" onchange="recalcularTotal()" />
+                                <span asp-validation-for="CompraVM.Detalles[0].Cantidad" class="text-danger small"></span>
+                            </td>
+                            <td>
+                                <input asp-for="CompraVM.Detalles[0].PrecioUnitario"
+                                        type="number"
+                                        step="0.01"
+                                        class="form-control form-control-sm"
+                                        onchange="recalcularTotal()" />
+                                <span asp-validation-for="CompraVM.Detalles[0].PrecioUnitario" class="text-danger small"></span>
+                            </td>
+                            <td class="text-end">
+                                <button type="button" class="btn btn-outline-danger btn-sm" onclick="eliminarFila(this)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="card-footer bg-light text-end">
+            <a asp-page="Index" class="btn btn-link">← Volver al listado</a>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script>
+        let productos = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.ProductosDisponibles));
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const btnAgregar = document.querySelector("button[onclick*='agregarFila']");
+
+            // Si no hay productos, desactiva el botón
+            if (productos.length === 0) {
+                btnAgregar.disabled = true;
+                btnAgregar.classList.add("disabled");
+                btnAgregar.textContent = "No hay productos disponibles";
+            } else {
+                agregarFila();
+            }
+
+            // Validación en submit
+            document.getElementById("formCompra").addEventListener("submit", function (e) {
+                if (!$(this).valid()) {
+                    e.preventDefault();
+                    return;
+                }
+            });
+        });
+
+        function agregarFila() {
+            const index = document.querySelectorAll("#detalle-table tbody tr").length;
+
+            // Revisa cuántos productos ya han sido seleccionados
+            const idsUsados = Array.from(document.querySelectorAll("[name*='ProductoId']"))
+                .map(sel => parseInt(sel.value))
+                .filter(id => !isNaN(id));
+
+            if (idsUsados.length >= productos.length) {
+                alert("Ya se han agregado todos los productos disponibles.");
+                return;
+            }
+
+            let html = document.getElementById("plantillaFila").outerHTML;
+            html = html
+                .replaceAll("[0]", `[${index}]`)
+                .replaceAll("_0__", `_${index}__`)
+                .replaceAll("-0-", `-${index}-`);
+
+            const temp = document.createElement("tbody");
+            temp.innerHTML = html;
+            const nuevaFila = temp.firstElementChild;
+            nuevaFila.removeAttribute("id");
+
+            document.querySelector("#detalle-table tbody").appendChild(nuevaFila);
+
+            // Reactivar validaciones
+            const form = $("#formVenta");
+            $.validator.unobtrusive.parse(nuevaFila);
+            form.removeData("validator").removeData("unobtrusiveValidation");
+            $.validator.unobtrusive.parse(form);
+        }
+
+        function actualizarPrecio(select) {
+            const selected = select.options[select.selectedIndex];
+            const precio = selected.getAttribute("data-precio")?.replace(",", ".") || "0";
+            const inputPrecio = select.closest("tr").querySelector("[name*='PrecioUnitario']");
+            inputPrecio.value = precio;
+            recalcularTotal();
+        }
+
+        function recalcularTotal() {
+            let total = 0;
+
+            document.querySelectorAll("#detalle-table tbody tr").forEach(row => {
+                let cantidadRaw = row.querySelector("[name*='Cantidad']").value || "0";
+                let precioRaw = row.querySelector("[name*='PrecioUnitario']").value || "0";
+
+                // Normalizar posibles comas decimales
+                const cantidad = parseFloat(cantidadRaw.replace(",", "."));
+                const precio = parseFloat(precioRaw.replace(",", "."));
+
+                total += (cantidad || 0) * (precio || 0);
+            });
+
+            document.getElementById("totalCompra").innerText = total.toFixed(2);
+        }
+
+
+        function eliminarFila(btn) {
+            const filas = document.querySelectorAll("#detalle-table tbody tr");
+            if (filas.length <= 1) {
+                alert("Debe haber al menos un producto en la compra.");
+                return;
+            }
+
+            btn.closest("tr").remove();
+            recalcularTotal();
+        }
+
+    </script>
+}

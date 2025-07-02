@@ -1,0 +1,33 @@
+﻿@page
+@model Papeleria.Pages_Productos.DetailsModel
+
+@{
+    ViewData["Title"] = "Detalles del producto";
+}
+
+<div class="contenedor-limitado mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white border-bottom">
+                    <h5 class="mb-0"><i class="bi bi-info-circle-fill me-2"></i> Detalles del producto</h5>
+                </div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-sm-4 text-muted">Nombre</dt>
+                        <dd class="col-sm-8">@Model.Producto.Nombre</dd>
+
+                        <dt class="col-sm-4 text-muted">Precio</dt>
+                        <dd class="col-sm-8">$@Model.Producto.Precio.ToString("N2")</dd>
+
+                        <dt class="col-sm-4 text-muted">Stock</dt>
+                        <dd class="col-sm-8">@Model.Producto.Stock unidades</dd>
+                    </dl>
+                </div>
+                <div class="card-footer text-end bg-light">
+                    <a asp-page="Index" class="btn btn-link">← Volver al listado</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|c:\\users\\deivy\\source\\repos\\papeleria\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|c:\\users\\deivy\\source\\repos\\papeleria\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|c:\\users\\deivy\\source\\repos\\papeleria\\pages\\ventas\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|solutionrelative:pages\\ventas\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|c:\\users\\deivy\\source\\repos\\papeleria\\pages\\compras\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|solutionrelative:pages\\compras\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T22:14:41.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-02T22:14:31.047Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Edit.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\Pages\\Compras\\Edit.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Compras\\Edit.cshtml.cs",
+              "ToolTip": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\Pages\\Compras\\Edit.cshtml.cs",
+              "RelativeToolTip": "Pages\\Compras\\Edit.cshtml.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwCQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T21:50:34.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\Pages\\Ventas\\Edit.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Ventas\\Edit.cshtml.cs",
+              "ToolTip": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\Pages\\Ventas\\Edit.cshtml.cs",
+              "RelativeToolTip": "Pages\\Ventas\\Edit.cshtml.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwCAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-02T21:50:19.236Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

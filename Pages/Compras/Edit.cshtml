@@ -1,0 +1,90 @@
+﻿@page
+@model Papeleria.Pages_Compras.EditModel
+
+@{
+    ViewData["Title"] = "Editar compra";
+}
+
+<div class="contenedor-limitado mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-primary text-white d-flex align-items-center">
+                    <i class="bi bi-pencil-square me-2"></i>
+                    <h5 class="mb-0">Editar compra #@Model.Transaccion.Id</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" class="needs-validation" novalidate autocomplete="off">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+                        <input type="hidden" asp-for="Transaccion.Id" />
+                        <input type="hidden" asp-for="Transaccion.TipoTransaccionId" />
+
+                        <div class="mb-3">
+                            <label asp-for="Transaccion.Fecha" class="form-label fw-semibold">Fecha</label>
+                            <input asp-for="Transaccion.Fecha" class="form-control" />
+                            <span asp-validation-for="Transaccion.Fecha" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Transaccion.Total" class="form-label fw-semibold">Total</label>
+                            <div class="input-group">
+                                <span class="input-group-text">$</span>
+                                <input type="text" name="Transaccion.Total" class="form-control"
+                                       value="@Model.Transaccion.Total.ToString("N2", new System.Globalization.CultureInfo("es-CO"))" />
+                            </div>
+                            <span asp-validation-for="Transaccion.Total" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success">
+                                <i class="bi bi-check-circle me-1"></i> Guardar cambios
+                            </button>
+                        </div>
+                    </form>
+
+                    <hr class="my-4" />
+
+                    <h6 class="text-muted mb-3">
+                        <i class="bi bi-list-ul me-1"></i> Productos incluidos en esta compra
+                    </h6>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-bordered table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Producto</th>
+                                    <th class="text-center">Cantidad</th>
+                                    <th class="text-end">Precio Unitario</th>
+                                    <th class="text-end">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var detalle in Model.Transaccion.Detalles)
+                                {
+                                    <tr>
+                                        <td>@detalle.Producto.Nombre</td>
+                                        <td class="text-center">@detalle.Cantidad</td>
+                                        <td class="text-end">
+                                            @detalle.PrecioUnitario.ToString("C0", new System.Globalization.CultureInfo("es-CO"))
+                                        </td>
+                                        <td class="text-end">
+                                            @((detalle.Cantidad * detalle.PrecioUnitario).ToString("C0", new System.Globalization.CultureInfo("es-CO")))
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer text-end bg-light">
+                    <a asp-page="Index" class="btn btn-link">← Volver al listado</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
