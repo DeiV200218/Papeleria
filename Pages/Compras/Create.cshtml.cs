@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Papeleria.Data;
 using Papeleria.Models;
@@ -20,6 +21,7 @@ namespace Papeleria.Pages.Compras
         public CrearTransaccionViewModel CompraVM { get; set; } = new();
 
         public List<Producto> ProductosDisponibles { get; set; } = new();
+
 
         public async Task OnGetAsync()
         {

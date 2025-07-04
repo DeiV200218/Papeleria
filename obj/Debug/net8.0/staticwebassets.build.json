@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "O/y/u6iY9IiREMXx4LLIwaGGqF4o5Hb0OhUlGfx2+ec=",
+  "Hash": "gOgyLciIk7Typ/OcJH/DqDxr1x6B8ZIdGq7aaUxAAKc=",
   "Source": "Papeleria",
   "BasePath": "_content/Papeleria",
   "Mode": "Default",
@@ -148,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\wwwroot\\images\\agrega-producto.png",
+      "SourceId": "Papeleria",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\wwwroot\\",
+      "BasePath": "_content/Papeleria",
+      "RelativePath": "images/agrega-producto.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\agrega-producto.png"
     },
     {
       "Identity": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\wwwroot\\images\\utiles-escolares.png",

@@ -87,4 +87,15 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+    <script>
+        new Cleave('input[name="Transaccion.Total"]', {
+            numeral: true,
+            numeralDecimalMark: ',',
+            delimiter: '.',
+            prefix: '',
+            numeralThousandsGroupStyle: 'thousand',
+            noImmediatePrefix: true
+        });
+    </script>
 }

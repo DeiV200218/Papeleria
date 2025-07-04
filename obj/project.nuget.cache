@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Nt42oiLPdymooaCCKT9Y1+wOiRmLf1sscQJnwKxOBNG6VHyQiW1w3++t6C97AK78497ctYglKjArpzWcPfc5DA==",
+  "dgSpecHash": "klncNRUOzw95KvTRCE+t+LQbmMyuFE1oRR6BNjv9rzVI12rLkZ0jDqjzKC0jUoartClD9p4HWJ/kDdDkC6DBSw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\Papeleria.csproj",
+  "projectFilePath": "D:\\Desarrollo\\Papeleria\\Papeleria.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Deivy\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Deivy\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

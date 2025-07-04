@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\wwwroot\\images\\agrega-producto.png",
+      "PackagePath": "staticwebassets\\images\\agrega-producto.png"
+    },
+    {
       "Id": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\wwwroot\\images\\utiles-escolares.png",
       "PackagePath": "staticwebassets\\images\\utiles-escolares.png"
     },

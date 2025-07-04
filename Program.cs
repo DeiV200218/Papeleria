@@ -22,7 +22,7 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     //Comentar cuando se vaya a trabajar en depuracion
-    db.Database.Migrate();
+    //db.Database.Migrate();
 }
 
 

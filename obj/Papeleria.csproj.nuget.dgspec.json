@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Deivy\\source\\repos\\Papeleria\\Papeleria.csproj": {}
+    "D:\\Desarrollo\\Papeleria\\Papeleria.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Deivy\\source\\repos\\Papeleria\\Papeleria.csproj": {
+    "D:\\Desarrollo\\Papeleria\\Papeleria.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\Papeleria.csproj",
+        "projectUniqueName": "D:\\Desarrollo\\Papeleria\\Papeleria.csproj",
         "projectName": "Papeleria",
-        "projectPath": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\Papeleria.csproj",
+        "projectPath": "D:\\Desarrollo\\Papeleria\\Papeleria.csproj",
         "packagesPath": "C:\\Users\\Deivy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Deivy\\source\\repos\\Papeleria\\obj\\",
+        "outputPath": "D:\\Desarrollo\\Papeleria\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -32,7 +32,7 @@
                         <i class="bi bi-plus-circle me-1"></i> Agregar producto
                     </button>
                     <div class="fs-5 fw-semibold text-end">
-                        Total: $<span id="totalVenta">0.00</span>
+                        Total: <span id="totalVenta">$ 0</span>
                     </div>
                 </div>
 
@@ -65,11 +65,14 @@
                                 <span asp-validation-for="VentaVM.Detalles[0].Cantidad" class="text-danger small"></span>
                             </td>
                             <td>
+                                <!-- Input con máscara solo visual -->
+                                <input type="text"
+                                       class="form-control form-control-sm precio-mascarado"
+                                       oninput="actualizarValorReal(this)" />
+                                <!-- Input oculto que Razor enlaza y valida -->
                                 <input asp-for="VentaVM.Detalles[0].PrecioUnitario"
-                                        type="number"
-                                        step="0.01"
-                                        class="form-control form-control-sm"
-                                        onchange="recalcularTotal()" />
+                                       type="hidden"
+                                       class="precio-real" />
                                 <span asp-validation-for="VentaVM.Detalles[0].PrecioUnitario" class="text-danger small"></span>
                             </td>
                             <td class="text-end">
@@ -90,8 +93,14 @@
 
 
 @section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
     <script>
         let productos = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model.ProductosDisponibles));
+        const formatoColombiano = new Intl.NumberFormat('es-CO', {
+            style: 'currency',
+            currency: 'COP',
+            minimumFractionDigits: 0
+        });
 
         document.addEventListener("DOMContentLoaded", function () {
             const btnAgregar = document.querySelector("button[onclick*='agregarFila']");
@@ -113,6 +122,22 @@
                 }
             });
         });
+
+
+        function aplicarMascaraPrecio(fila) {
+            const visualInput = fila.querySelector(".precio-mascarado");
+            if (visualInput) {
+                new Cleave(visualInput, {
+                    numeral: true,
+                    numeralDecimalMark: ',',
+                    delimiter: '.',
+                    prefix: '$ ',
+                    numeralThousandsGroupStyle: 'thousand',
+                    noImmediatePrefix: true
+                });
+            }
+        }
+
 
         function agregarFila() {
             const index = document.querySelectorAll("#detalle-table tbody tr").length;
@@ -140,6 +165,8 @@
 
             document.querySelector("#detalle-table tbody").appendChild(nuevaFila);
 
+            aplicarMascaraPrecio(nuevaFila);
+
             // Reactivar validaciones
             const form = $("#formVenta");
             $.validator.unobtrusive.parse(nuevaFila);
@@ -149,11 +176,22 @@
 
         function actualizarPrecio(select) {
             const selected = select.options[select.selectedIndex];
-            const precio = selected.getAttribute("data-precio")?.replace(",", ".") || "0";
-            const inputPrecio = select.closest("tr").querySelector("[name*='PrecioUnitario']");
-            inputPrecio.value = precio;
+            const rawPrecio = selected.getAttribute("data-precio")?.replace(",", ".") || "0";
+            const precio = parseFloat(rawPrecio);
+
+            const fila = select.closest("tr");
+
+            // Campo visible con máscara
+            const inputVisual = fila.querySelector(".precio-mascarado");
+            if (inputVisual) {
+                // Asignar valor formateado visualmente
+                inputVisual.value = formatoColombiano.format(precio);
+                actualizarValorReal(inputVisual); // sincroniza el campo oculto
+            }
+
             recalcularTotal();
         }
+
 
         function recalcularTotal() {
             let total = 0;
@@ -169,9 +207,8 @@
                 total += (cantidad || 0) * (precio || 0);
             });
 
-            document.getElementById("totalVenta").innerText = total.toFixed(2);
+            document.getElementById("totalVenta").innerText = formatoColombiano.format(total);
         }
-
 
         function eliminarFila(btn) {
             const filas = document.querySelectorAll("#detalle-table tbody tr");
@@ -197,6 +234,19 @@
                 recalcularTotal();
             }
         }
+
+        function actualizarValorReal(inputVisual) {
+            const valorLimpio = inputVisual.value
+                .replace(/\$/g, "")
+                .replace(/\./g, "")
+                .replace(",", ".")
+                .trim();
+
+            const inputReal = inputVisual.parentElement.querySelector(".precio-real");
+            inputReal.value = valorLimpio;
+            recalcularTotal(); // opcional si quieres que se actualice de inmediato
+        }
+
 
     </script>
 }
