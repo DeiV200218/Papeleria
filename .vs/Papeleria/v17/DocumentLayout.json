@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "D:\\Desarrollo\\Papeleria\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|d:\\desarrollo\\papeleria\\pages\\ventas\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|solutionrelative:pages\\ventas\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|d:\\desarrollo\\papeleria\\pages\\productos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|solutionrelative:pages\\productos\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|d:\\desarrollo\\papeleria\\pages\\compras\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|solutionrelative:pages\\compras\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|d:\\desarrollo\\papeleria\\pages\\ventas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|solutionrelative:pages\\ventas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|d:\\desarrollo\\papeleria\\pages\\compras\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|solutionrelative:pages\\compras\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|d:\\desarrollo\\papeleria\\pages\\compras\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|solutionrelative:pages\\compras\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|d:\\desarrollo\\papeleria\\pages\\compras\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|solutionrelative:pages\\compras\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|d:\\desarrollo\\papeleria\\pages\\ventas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ABFCE9AC-A990-4F76-A2B0-F90F59AA129D}|Papeleria.csproj|solutionrelative:pages\\ventas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
@@ -40,80 +36,49 @@
               "RelativeDocumentMoniker": "Pages\\Compras\\Edit.cshtml",
               "ToolTip": "D:\\Desarrollo\\Papeleria\\Pages\\Compras\\Edit.cshtml",
               "RelativeToolTip": "Pages\\Compras\\Edit.cshtml",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAAAF4AAAAbAAAA",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAAAFkAAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-04T21:45:10.497Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\Desarrollo\\Papeleria\\Pages\\Ventas\\Create.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Ventas\\Create.cshtml",
-              "ToolTip": "D:\\Desarrollo\\Papeleria\\Pages\\Ventas\\Create.cshtml",
-              "RelativeToolTip": "Pages\\Ventas\\Create.cshtml",
-              "ViewState": "AQIAANcAAAAAAAAAAAAUwOoAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-04T19:32:00.975Z"
+              "WhenOpened": "2025-07-11T16:33:40.61Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Create.cshtml.cs",
-              "DocumentMoniker": "D:\\Desarrollo\\Papeleria\\Pages\\Ventas\\Create.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\Ventas\\Create.cshtml.cs",
-              "ToolTip": "D:\\Desarrollo\\Papeleria\\Pages\\Ventas\\Create.cshtml.cs",
-              "RelativeToolTip": "Pages\\Ventas\\Create.cshtml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T21:18:13.053Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "4dc98ce4-4282-4406-8722-063ad29906d2",
-        "Display": 0,
-        "X": 57,
-        "Y": 0,
-        "Width": 1553,
-        "Height": 736,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\Desarrollo\\Papeleria\\Pages\\Compras\\Create.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Compras\\Create.cshtml",
-              "ToolTip": "D:\\Desarrollo\\Papeleria\\Pages\\Compras\\Create.cshtml",
-              "RelativeToolTip": "Pages\\Compras\\Create.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAACkAAAA5AAAA",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Desarrollo\\Papeleria\\Pages\\Productos\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Productos\\Edit.cshtml",
+              "ToolTip": "D:\\Desarrollo\\Papeleria\\Pages\\Productos\\Edit.cshtml",
+              "RelativeToolTip": "Pages\\Productos\\Edit.cshtml",
+              "ViewState": "AQIAADsAAAAAAAAAAAAAAEgAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-04T21:17:44.347Z",
+              "WhenOpened": "2025-07-11T16:33:22.014Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Create.cshtml.cs",
-              "DocumentMoniker": "D:\\Desarrollo\\Papeleria\\Pages\\Compras\\Create.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\Compras\\Create.cshtml.cs",
-              "ToolTip": "D:\\Desarrollo\\Papeleria\\Pages\\Compras\\Create.cshtml.cs",
-              "RelativeToolTip": "Pages\\Compras\\Create.cshtml.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAIwBwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T17:22:14.141Z"
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Desarrollo\\Papeleria\\Pages\\Ventas\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Ventas\\Index.cshtml",
+              "ToolTip": "D:\\Desarrollo\\Papeleria\\Pages\\Ventas\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Ventas\\Index.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACUAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-11T16:17:59.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Desarrollo\\Papeleria\\Pages\\Compras\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Compras\\Index.cshtml",
+              "ToolTip": "D:\\Desarrollo\\Papeleria\\Pages\\Compras\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Compras\\Index.cshtml",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAACYAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-11T16:16:44.027Z",
+              "EditorCaption": ""
             }
           ]
         }

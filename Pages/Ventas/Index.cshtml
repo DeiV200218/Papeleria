@@ -35,7 +35,7 @@
                         <tr>
                             <td>@item.Fecha.ToString("dd/MM/yyyy")</td>
                             <td>@item.Fecha.ToString("hh:mm tt")</td> <!-- Hora en formato 12h -->
-                            <td>@item.Total.ToString("C")</td>
+                            <td>@item.Total.ToString("C0")</td>
                             <td class="text-end">
  @*                                <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-outline-secondary btn-sm me-1" title="Detalle">
                                     <i class="bi bi-eye"></i>
